@@ -16,6 +16,8 @@ const int MAGNET_ON = 0;
 const int PRUMER_SIZE = 10;
 //Prah pro detekci prujezdu
 const int PRAH = 20;
+//Cas v zastavce. t=2*CAS_V_ZASTAVCE [ms]
+const int CAS_V_ZASTAVCE = 4000;
 
 int state = 0;
 
@@ -61,7 +63,7 @@ void loop() {
         //activate output and start timer
         digitalWrite(digitalOutPin, MAGNET_ON);
         Serial.println("Vystup ON");
-        timer = 4000;
+        timer = CAS_V_ZASTAVCE;
       }
       state = 1;
     }
